@@ -1,45 +1,48 @@
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import HomePageImage from "../Assets/Images/homePageMainImage.png";
-import HomeLayout from "../Layouts/HomeLayout";
+import HomePageImage from '../Assets/Images/homePageMainImage.png';
+import HomeLayout from '../Layouts/HomeLayout';
 
 function HomePage() {
-    return (
-        <HomeLayout>
-            <div className="pt-10 text-white flex items-center justify-center gap-10 mx-16 h-[90vh]">
-                <div className="w-1/2 space-y-6">
-                    <h1 className="text-5xl font-semibold">
-                        Find out best
-                        <span className="text-yellow-500 font-bold">
-                            Online Courses
-                        </span>
-                    </h1>
-                    <p className="text-xl text-gray-200">
-                        We have a large library of courses taught by highly skilled and qualified faculties at a very affordable cost.
-                    </p>
+  return (
+    <HomeLayout>
+      <div className="bg-primary min-h-screen flex items-center justify-center text-white">
+        <div className="container mx-auto flex items-center justify-center gap-10">
+          <div className="w-1/2 space-y-6">
+            <h1 className="text-4xl font-semibold">
+              Discover the Best Online Courses
+            </h1>
+            <p className="text-lg text-gray-300">
+              Explore a vast library of high-quality courses taught by experienced instructors at affordable prices.
+            </p>
 
-                    <div className="space-x-6">
-                        <Link to="/courses">
-                            <button className="bg-yellow-500 px-5 py-3 rounded-md font-semibold text-lg cursor-pointer hover:bg-yellow-600 transition-all ease-in-out duration-300">
-                                Explore courses
-                            </button>
-                        </Link>
+            <div className="space-x-6 mt-4">
+              <Link to="/courses">
+                <button className="btn-primary">
+                  Explore Courses
+                </button>
+              </Link>
 
-                        <Link to="/contact">
-                            <button className="border border-yellow-500 px-5 py-3 rounded-md font-semibold text-lg cursor-pointer hover:bg-yellow-600 transition-all ease-in-out duration-300">
-                                Contact Us
-                            </button>
-                        </Link>
-                    </div>
-                </div>
-
-                <div className="w-1/2 flex items-center justify-center">
-                    <img alt="homepage image" src={HomePageImage} />
-                </div>
-
+              <Link to="/contact">
+                <button className="btn-secondary">
+                  Contact Us
+                </button>
+              </Link>
             </div>
-        </HomeLayout>
-    );
+          </div>
+
+          <div className="w-1/2">
+            <img
+              src={HomePageImage}
+              alt="Homepage"
+              className="rounded-lg shadow-xl"
+            />
+          </div>
+        </div>
+      </div>
+    </HomeLayout>
+  );
 }
 
 export default HomePage;
