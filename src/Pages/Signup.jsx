@@ -61,15 +61,16 @@ function Signup() {
             return;
         }
         // checking valid email
-        if(!signupData.email.match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) {
+        if(!isEmail(signupData.email)) {
             toast.error("Invalid email id");
             return;
         }
         // checking password validation
-        if(!signupData.password.match(/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/)) {
-            toast.error("Password should be 6 - 16 character long with atleast a number and special character");
+        if(!isValidPassword(signupData.password)) {
+            toast.error("Password should be at least 8 characters long with at least 1 lowercase letter, 1 uppercase letter, 1 number, 1 special character, and no spaces");
             return;
         }
+        
 
         const formData = new FormData();
         formData.append("fullName", signupData.fullName);
