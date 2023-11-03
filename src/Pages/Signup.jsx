@@ -4,6 +4,7 @@ import { BsPersonCircle } from 'react-icons/bs';
 import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 
+import { isEmail, isValidPassword } from '../Helpers/regexMatcher';
 import HomeLayout from '../Layouts/HomeLayout';
 import { createAccount } from '../Redux/Slices/AuthSlice';
 
@@ -67,10 +68,9 @@ function Signup() {
         }
         // checking password validation
         if(!isValidPassword(signupData.password)) {
-            toast.error("Password should be at least 8 characters long with at least 1 lowercase letter, 1 uppercase letter, 1 number, 1 special character, and no spaces");
+            toast.error("Password should be 6 - 16 character long with atleast a number and special character");
             return;
         }
-        
 
         const formData = new FormData();
         formData.append("fullName", signupData.fullName);
@@ -80,6 +80,7 @@ function Signup() {
 
         // dispatch create account action
         const response = await dispatch(createAccount(formData));
+        console.log(response);
         if(response?.payload?.success)
             navigate("/");
 
