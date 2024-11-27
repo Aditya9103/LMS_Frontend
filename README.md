@@ -12,11 +12,15 @@ In this Web-app, you can create courses, manage enrollments, and handle differen
 - **Instructor**: Can create and manage courses and course materials.  
 - **Student**: Can view and complete course content.
 
-For the **frontend**, I have used React.js, HTML, and CSS. For the **backend**, I have used MongoDB, Express.js, and Node.js.
+For the **frontend**, I have used React.js, HTML, and Tailwind CSS. For the **backend**, I have used MongoDB, Express.js, and Node.js.
 
 I have implemented a ‘Trust this device’ feature and used JWT Web Tokens for secure authentication and authorization. Additionally, Redux Toolkit was used for efficient state management.
 
 ---
+## Live Demo
+
+You can access the live version of the LMS project here:  
+👉 **[LMS Live Demo](https://frontend-6248.onrender.com/)**
 
 ## Features and Working Structure
 
